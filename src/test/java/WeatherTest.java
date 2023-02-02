@@ -5,12 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.v106.css.model.Value;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 public class WeatherTest {
-
-
-
-
 
     @Test
     public void findWeatherPage() throws InterruptedException {
@@ -24,9 +21,21 @@ public class WeatherTest {
         System.out.println("Miasto to:" + " " +  cityName.getAttribute ( "value"));
         cityName.sendKeys(Keys.ENTER);
         Thread.sleep(5000);
-    WebElement actualWeather = driver.findElement(By.xpath("//p[contains(.,'°C')]"));
-        System.out.println("Temperatura to:" + " " +  actualWeather.getAttribute ( "value"));
+    WebElement actualWeather = driver.findElement(By.xpath("//div[@class='temp']//h2//p"));
+        Thread.sleep(5000);
+//      System.out.println("Temperatura to:" + " " +  actualWeather.getAttribute("value"));
 
-//     driver.quit();
+        driver.findElement(By.xpath("(//button[contains(@class,'rounded border border-dark brightenedDark')])[1]")).click();
+        WebElement cityNameTwo = driver.findElement(By.xpath("(//input[@placeholder=' Wpisz nazwę miejscowości'])"));
+        cityNameTwo.sendKeys("Poznań");
+        System.out.println("Miasto to:" + " " +  cityNameTwo.getAttribute ( "value"));
+        cityNameTwo.sendKeys(Keys.ENTER);
+        Thread.sleep(5000);
+        WebElement actualWeatherTwo = driver.findElement(By.xpath("//div[@class='temp']//h2//p"));
+        Thread.sleep(5000);
+//        System.out.println("Temperatura to:" + " " +  actualWeatherTwo.getAttribute("value"));
+
+
+    driver.quit();
     }
 }
