@@ -10,29 +10,15 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-public class WeatherTest {
+public class WeatherTest extends Main {
 
-private WebDriver driver;
 
-@BeforeTest
-public void setup(){
-    driver = new ChromeDriver();
-    driver.manage().window().maximize();
-    driver.get("https://jacekkomar.github.io/toolbox/#/");
-    driver.findElement(By.xpath("//div[@class='ChooseSite col-sm mr-1 p-4 border border-dark rounded brightened']")).click();
-}
 
 @BeforeMethod
     public void nextWeather(){
+    driver.findElement(By.xpath("//div[@class='ChooseSite col-sm mr-1 p-4 border border-dark rounded brightened']")).click();
         System.out.println("Pogoda dla kolejnego miasta:");
     }
-
-    @AfterTest
-    public void quitPageWeather(){
-        driver.quit();
-    }
-
-
 
     @Test
     public void findWeatherPage() throws InterruptedException {
@@ -45,11 +31,10 @@ public void setup(){
         WebElement actualWeather = driver.findElement(By.xpath("//div[@class='temp']//h2//p"));
         Thread.sleep(2000);
 //      System.out.println("Temperatura to:" + " " +  actualWeather.getAttribute("value"));
-
     }
+
 @Test
 public void findWeatherPageTwo() throws InterruptedException {
-
         driver.findElement(By.xpath("(//button[contains(@class,'rounded border border-dark brightenedDark')])[1]")).click();
         WebElement cityNameTwo = driver.findElement(By.xpath("(//input[@placeholder=' Wpisz nazwę miejscowości'])"));
         cityNameTwo.sendKeys("Poznań");
@@ -59,8 +44,5 @@ public void findWeatherPageTwo() throws InterruptedException {
         WebElement actualWeatherTwo = driver.findElement(By.xpath("//div[@class='temp']//h2//p"));
         Thread.sleep(2000);
 //        System.out.println("Temperatura to:" + " " +  actualWeatherTwo.getAttribute("value"));
-
-
-
     }
 }
