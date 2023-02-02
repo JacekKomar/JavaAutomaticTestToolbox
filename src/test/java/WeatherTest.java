@@ -45,4 +45,18 @@ public void findWeatherPageTwo() throws InterruptedException {
         Thread.sleep(2000);
 //        System.out.println("Temperatura to:" + " " +  actualWeatherTwo.getAttribute("value"));
     }
+    @Test
+    public void calendarTest() throws InterruptedException {
+    driver.findElement(By.xpath("(//div[@class=' ChooseSite col-sm p-4 mr-1 border border-dark rounded brightened'])")).click();
+        driver.findElement(By.xpath("(//button[normalize-space()='»'])")).click();
+        driver.findElement(By.xpath("(//button[normalize-space()='»'])")).click();
+        driver.findElement(By.xpath("(//button[contains(text(),'›')])")).click();
+        driver.findElement(By.xpath("(//button[contains(text(),'›')])")).click();
+        driver.findElement(By.xpath("(//button[contains(text(),'‹')])")).click();
+        driver.findElement(By.xpath("(//button[normalize-space()='«'])")).click();
+        driver.findElement(By.xpath("(//abbr[@aria-label='14 marca 2024'])")).click();
+        Thread.sleep(3000);
+        System.out.println("Wybrano datę:");
+    }
+
 }
