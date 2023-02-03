@@ -59,13 +59,35 @@ public class DayScheduleTest extends Main {
        changeOneTask.click();
        WebElement writeChangeTask = driver.findElement(By.xpath("(//input[contains(@placeholder,'Update your item')])[1]"));
         writeChangeTask.click();
-
-        writeChangeTask.sendKeys("Nauka robienia testów automatycznych w Pythonie.");
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+        writeChangeTask.sendKeys(Keys.BACK_SPACE);
+        writeChangeTask.sendKeys(Keys.BACK_SPACE);
+        writeChangeTask.sendKeys(Keys.BACK_SPACE);
+        writeChangeTask.sendKeys(Keys.BACK_SPACE);
+        writeChangeTask.sendKeys(Keys.BACK_SPACE);
+        writeChangeTask.sendKeys(Keys.BACK_SPACE);
+        writeChangeTask.sendKeys(" Pythonie");
         driver.findElement(By.xpath("(//h3[contains(text(),'Zamień')])")).click();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
     }
-
-
-
-
 }
