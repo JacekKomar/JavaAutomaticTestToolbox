@@ -14,9 +14,9 @@ public class Main {
         driver.get("https://jacekkomar.github.io/toolbox/#/");
     }
 
-//    @AfterTest
-//    public void quitPageWeather(){
-//        driver.quit();
-//    }
+    @AfterTest
+    public void quitPageWeather(){
+        driver.quit();
+    }
 
 }

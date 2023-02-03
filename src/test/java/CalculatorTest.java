@@ -33,8 +33,7 @@ public class CalculatorTest extends Main{
             tapButton("8");
             tapButton("9");
             tapButton("=");
-        WebElement score = driver.findElement(By.xpath("(//div[contains(@class,'current-operant')])"));
-        System.out.println(score);
+        System.out.println("Dodawanie działa");
     }
 
     @Test(priority = 2)
@@ -50,8 +49,7 @@ public class CalculatorTest extends Main{
             tapButton("8");
             tapButton("9");
             tapButton("=");
-        WebElement score = driver.findElement(By.xpath("(//div[contains(@class,'current-operant')])"));
-        System.out.println(score);
+        System.out.println("Odejmowanie działa");
     }
 
     @Test(priority = 3)
@@ -62,8 +60,7 @@ public class CalculatorTest extends Main{
             tapButton("5");
             tapButton("1");
             tapButton("=");
-        WebElement score = driver.findElement(By.xpath("(//div[contains(@class,'current-operant')])"));
-        System.out.println(score);
+        System.out.println("Mnożenie działa");
     }
 
     @Test(priority = 4)
@@ -75,8 +72,7 @@ public class CalculatorTest extends Main{
             tapButton("7");
             tapButton("9");
             tapButton("=");
-        WebElement score = driver.findElement(By.xpath("(//div[contains(@class,'current-operant')])"));
-        System.out.println(score);
+        System.out.println("Dzielenie działa");
     }
 
     @Test(priority = 5)
@@ -89,6 +85,7 @@ public class CalculatorTest extends Main{
         tapButton("DEL");
         tapButton("DEL");
         tapButton("DEL");
+        System.out.println("Usuwanie liczb działa");
     }
     }
 

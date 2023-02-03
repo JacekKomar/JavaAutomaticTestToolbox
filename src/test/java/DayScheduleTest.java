@@ -8,49 +8,45 @@ public class DayScheduleTest extends Main {
 
     @BeforeMethod
         public void addTaskConsoleInfo(){
-            System.out.println("Dodano zadanie:");
+            System.out.println("Kolejny test:");
         }
 
     @Test(priority = 1)
-    public void findDaySchedulePage() {
-        driver.findElement(By.xpath("(//div[@class='ChooseSite col-sm p-4 mr-1 border border-dark rounded brightened'])[2]")).click();
-    }
-
-    @Test(priority = 2)
     public void addFirstTask() {
+        driver.findElement(By.xpath("(//div[@class='ChooseSite col-sm p-4 mr-1 border border-dark rounded brightened'])[2]")).click();
         WebElement addTask = driver.findElement(By.xpath("//input[@placeholder='Wpisz swoje zadanie']"));
         addTask.click();
         addTask.sendKeys("Napisanie Cv.");
+        System.out.println("Zadanie to:" + " " + addTask.getAttribute("value"));
         driver.findElement(By.xpath("(//h3[normalize-space()='Dodaj swoje zadania'])")).click();
-
 }
 
-    @Test(priority = 3)
+    @Test(priority = 2)
     public void addSecondTask() {
         WebElement addTask = driver.findElement(By.xpath("//input[@placeholder='Wpisz swoje zadanie']"));
         addTask.click();
         addTask.sendKeys("Nauka robienia testów automatycznych w Javie.");
+        System.out.println("Zadanie to:" + " " + addTask.getAttribute("value"));
         driver.findElement(By.xpath("(//h3[normalize-space()='Dodaj swoje zadania'])")).click();
-
     }
 
-    @Test(priority = 4)
+    @Test(priority = 3)
     public void addThirdTask() {
         WebElement addTask = driver.findElement(By.xpath("//input[@placeholder='Wpisz swoje zadanie']"));
         addTask.click();
         addTask.sendKeys("Czytanie książki.");
+        System.out.println("Zadanie to:" + " " + addTask.getAttribute("value"));
         driver.findElement(By.xpath("(//h3[normalize-space()='Dodaj swoje zadania'])")).click();
-
     }
 
-    @Test(priority = 5)
+    @Test(priority = 4)
     public void deleteTask() {
         WebElement deleteOneTask = driver.findElement(By.xpath("(//*[name()='svg'][@stroke='currentColor'])[5]"));
         deleteOneTask.click();
-
+        System.out.println("Usunięto:" + "" + "zadanie");
     }
 
-    @Test(priority = 6)
+    @Test(priority = 5)
     public void changeTask() {
         WebElement changeOneTask = driver.findElement(By.xpath("(//*[name()='svg'][@stroke='currentColor'])[4]"));
         changeOneTask.click();
@@ -67,6 +63,7 @@ public class DayScheduleTest extends Main {
             }
         }
         writeChangeTask.sendKeys(" Pythonie");
+        System.out.println("Zmienione zadanie to:" + " " + writeChangeTask.getAttribute("value"));
         driver.findElement(By.xpath("(//h3[contains(text(),'Zamień')])")).click();
     }
 
