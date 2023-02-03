@@ -20,9 +20,8 @@ public class WeatherTest extends Main {
         cityName.sendKeys("Warszawa");
         System.out.println("Miasto to:" + " " + cityName.getAttribute("value"));
         cityName.sendKeys(Keys.ENTER);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         WebElement actualWeather = driver.findElement(By.xpath("//div[@class='temp']//h2//p"));
-        Thread.sleep(2000);
 //      System.out.println("Temperatura to:" + " " +  actualWeather.getAttribute("value"));
     }
 
@@ -33,13 +32,12 @@ public void findWeatherPageTwo() throws InterruptedException {
         cityNameTwo.sendKeys("Poznań");
         System.out.println("Miasto to:" + " " +  cityNameTwo.getAttribute ( "value"));
         cityNameTwo.sendKeys(Keys.ENTER);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         WebElement actualWeatherTwo = driver.findElement(By.xpath("//div[@class='temp']//h2//p"));
-        Thread.sleep(2000);
 //        System.out.println("Temperatura to:" + " " +  actualWeatherTwo.getAttribute("value"));
     }
     @Test(priority = 3)
-    public void calendarTest() throws InterruptedException {
+    public void calendarTest() {
     driver.findElement(By.xpath("(//div[@class=' ChooseSite col-sm p-4 mr-1 border border-dark rounded brightened'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='»'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='»'])")).click();
@@ -48,7 +46,6 @@ public void findWeatherPageTwo() throws InterruptedException {
         driver.findElement(By.xpath("(//button[contains(text(),'‹')])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='«'])")).click();
         driver.findElement(By.xpath("(//abbr[@aria-label='14 marca 2024'])")).click();
-        Thread.sleep(3000);
         System.out.println("Wybrano datę:");
     }
 

@@ -50,7 +50,7 @@ public class DayScheduleTest extends Main {
     }
 
     @Test(priority = 6)
-    public void changeTask() throws InterruptedException {
+    public void changeTask() {
        WebElement changeOneTask = driver.findElement(By.xpath("(//*[name()='svg'][@stroke='currentColor'])[4]"));
        changeOneTask.click();
        WebElement writeChangeTask = driver.findElement(By.xpath("(//input[contains(@placeholder,'Update your item')])[1]"));
@@ -84,6 +84,5 @@ public class DayScheduleTest extends Main {
         writeChangeTask.sendKeys(Keys.BACK_SPACE);
         writeChangeTask.sendKeys(" Pythonie");
         driver.findElement(By.xpath("(//h3[contains(text(),'Zamień')])")).click();
-        Thread.sleep(3000);
     }
 }

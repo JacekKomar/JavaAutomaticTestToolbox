@@ -15,72 +15,80 @@ public class CalculatorTest extends Main{
         System.out.println("Kolejne Obliczenie:");
     }
 
+    public void tapButton(String label){
+        driver.findElement(By.xpath("(//button[normalize-space()='"+label+"'])")).click();
+    }
+
     @Test(priority = 1)
     public void addition() {
         driver.findElement(By.xpath("(//h1[normalize-space()='Wybierz: Kalkulator'])[1]")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='1'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='2'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='3'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='4'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='+'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='5'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='6'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='7'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='8'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='9'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='='])")).click();
+            tapButton("1");
+            tapButton("2");
+            tapButton("3");
+            tapButton("4");
+            tapButton("+");
+            tapButton("5");
+            tapButton("6");
+            tapButton("7");
+            tapButton("8");
+            tapButton("9");
+            tapButton("=");
         WebElement score = driver.findElement(By.xpath("(//div[contains(@class,'current-operant')])"));
         System.out.println(score);
     }
 
     @Test(priority = 2)
     public void subtraction() {
-        driver.findElement(By.xpath("(//button[normalize-space()='0'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='.'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='3'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='4'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='-'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='5'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='6'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='7'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='8'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='9'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='='])")).click();
+            tapButton("0");
+            tapButton(".");
+            tapButton("3");
+            tapButton("4");
+            tapButton("-");
+            tapButton("5");
+            tapButton("6");
+            tapButton("7");
+            tapButton("8");
+            tapButton("9");
+            tapButton("=");
         WebElement score = driver.findElement(By.xpath("(//div[contains(@class,'current-operant')])"));
         System.out.println(score);
     }
 
     @Test(priority = 3)
     public void multiplication() {
-        driver.findElement(By.xpath("(//button[normalize-space()='2'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='7'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='*'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='5'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='1'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='='])")).click();
+            tapButton("2");
+            tapButton("7");
+            tapButton("*");
+            tapButton("5");
+            tapButton("1");
+            tapButton("=");
         WebElement score = driver.findElement(By.xpath("(//div[contains(@class,'current-operant')])"));
         System.out.println(score);
     }
+
     @Test(priority = 4)
     public void split() {
-        driver.findElement(By.xpath("(//button[normalize-space()='9'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='5'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='1'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='/'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='7'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='9'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='='])")).click();
+            tapButton("9");
+            tapButton("5");
+            tapButton("1");
+            tapButton("/");
+            tapButton("7");
+            tapButton("9");
+            tapButton("=");
         WebElement score = driver.findElement(By.xpath("(//div[contains(@class,'current-operant')])"));
         System.out.println(score);
     }
+
     @Test(priority = 5)
     public void delete() {
-        driver.findElement(By.xpath("(//button[normalize-space()='1'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='7'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='3'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='DEL'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='DEL'])")).click();
-        driver.findElement(By.xpath("(//button[normalize-space()='DEL'])")).click();
+        tapButton("1");
+        tapButton("7");
+        tapButton("3");
+        tapButton("0");
+        tapButton("DEL");
+        tapButton("DEL");
+        tapButton("DEL");
+        tapButton("DEL");
     }
     }
 
