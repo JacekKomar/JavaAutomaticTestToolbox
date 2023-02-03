@@ -21,22 +21,49 @@ public class DayScheduleTest extends Main {
 
     @Test(priority = 2)
     public void addFirstTask() throws InterruptedException {
-        driver.findElement(By.xpath("//input[@placeholder='Wpisz swoje zadanie']")).click();
-        driver.findElement(By.xpath("//input[@placeholder='Wpisz swoje zadanie']")).sendKeys("ww");
+        WebElement addTask = driver.findElement(By.xpath("//input[@placeholder='Wpisz swoje zadanie']"));
+        addTask.click();
+        addTask.sendKeys("Napisanie Cv.");
         driver.findElement(By.xpath("(//h3[normalize-space()='Dodaj swoje zadania'])")).click();
         Thread.sleep(2000);
-//        WebElement addTask = driver.findElement(By.xpath("//input[@placeholder='Wpisz swoje zadanie']"));
-
-//        addTask.sendKeys("Napisanie Cv.");
-//
-//        Thread.sleep(2000);
 }
 
+    @Test(priority = 3)
+    public void addSecondTask() throws InterruptedException {
+        WebElement addTask = driver.findElement(By.xpath("//input[@placeholder='Wpisz swoje zadanie']"));
+        addTask.click();
+        addTask.sendKeys("Nauka robienia testów automatycznych w Javie.");
+        driver.findElement(By.xpath("(//h3[normalize-space()='Dodaj swoje zadania'])")).click();
+        Thread.sleep(2000);
+    }
 
+    @Test(priority = 4)
+    public void addThirdTask() throws InterruptedException {
+        WebElement addTask = driver.findElement(By.xpath("//input[@placeholder='Wpisz swoje zadanie']"));
+        addTask.click();
+        addTask.sendKeys("Czytanie książki.");
+        driver.findElement(By.xpath("(//h3[normalize-space()='Dodaj swoje zadania'])")).click();
+        Thread.sleep(2000);
+    }
 
+    @Test(priority = 5)
+    public void deleteTask() throws InterruptedException {
+        WebElement deleteOneTask = driver.findElement(By.xpath("(//*[name()='svg'][@stroke='currentColor'])[5]"));
+        deleteOneTask.click();
+        Thread.sleep(2000);
+    }
 
+    @Test(priority = 6)
+    public void changeTask() throws InterruptedException {
+       WebElement changeOneTask = driver.findElement(By.xpath("(//*[name()='svg'][@stroke='currentColor'])[4]"));
+       changeOneTask.click();
+       WebElement writeChangeTask = driver.findElement(By.xpath("(//input[contains(@placeholder,'Update your item')])[1]"));
+        writeChangeTask.click();
 
-
+        writeChangeTask.sendKeys("Nauka robienia testów automatycznych w Pythonie.");
+        driver.findElement(By.xpath("(//h3[contains(text(),'Zamień')])")).click();
+        Thread.sleep(2000);
+    }
 
 
 
