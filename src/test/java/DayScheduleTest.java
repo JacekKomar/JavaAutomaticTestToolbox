@@ -1,6 +1,5 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.openqa.selenium.Keys;
@@ -13,44 +12,41 @@ public class DayScheduleTest extends Main {
         }
 
     @Test(priority = 1)
-    public void findDaySchedulePage() throws InterruptedException {
+    public void findDaySchedulePage() {
         driver.findElement(By.xpath("(//div[@class='ChooseSite col-sm p-4 mr-1 border border-dark rounded brightened'])[2]")).click();
-        Thread.sleep(2000);
-
     }
 
     @Test(priority = 2)
-    public void addFirstTask() throws InterruptedException {
+    public void addFirstTask() {
         WebElement addTask = driver.findElement(By.xpath("//input[@placeholder='Wpisz swoje zadanie']"));
         addTask.click();
         addTask.sendKeys("Napisanie Cv.");
         driver.findElement(By.xpath("(//h3[normalize-space()='Dodaj swoje zadania'])")).click();
-        Thread.sleep(2000);
+
 }
 
     @Test(priority = 3)
-    public void addSecondTask() throws InterruptedException {
+    public void addSecondTask() {
         WebElement addTask = driver.findElement(By.xpath("//input[@placeholder='Wpisz swoje zadanie']"));
         addTask.click();
         addTask.sendKeys("Nauka robienia testów automatycznych w Javie.");
         driver.findElement(By.xpath("(//h3[normalize-space()='Dodaj swoje zadania'])")).click();
-        Thread.sleep(2000);
+
     }
 
     @Test(priority = 4)
-    public void addThirdTask() throws InterruptedException {
+    public void addThirdTask() {
         WebElement addTask = driver.findElement(By.xpath("//input[@placeholder='Wpisz swoje zadanie']"));
         addTask.click();
         addTask.sendKeys("Czytanie książki.");
         driver.findElement(By.xpath("(//h3[normalize-space()='Dodaj swoje zadania'])")).click();
-        Thread.sleep(2000);
+
     }
 
     @Test(priority = 5)
-    public void deleteTask() throws InterruptedException {
+    public void deleteTask() {
         WebElement deleteOneTask = driver.findElement(By.xpath("(//*[name()='svg'][@stroke='currentColor'])[5]"));
         deleteOneTask.click();
-        Thread.sleep(2000);
     }
 
     @Test(priority = 6)
