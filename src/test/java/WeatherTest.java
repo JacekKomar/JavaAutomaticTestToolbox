@@ -3,9 +3,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 public class WeatherTest extends Main {
-
-
 
 @BeforeMethod
     public void nextWeather(){
@@ -22,7 +21,7 @@ public class WeatherTest extends Main {
         cityName.sendKeys(Keys.ENTER);
         Thread.sleep(1000);
         WebElement actualWeather = driver.findElement(By.xpath("//div[@class='temp']//h2//p"));
-//      System.out.println("Temperatura to:" + " " +  actualWeather.getAttribute("value"));
+        System.out.println("Temperatura to:" + " " +  actualWeather.getAttribute("value"));
     }
 
 @Test(priority = 2)
@@ -34,7 +33,7 @@ public void findWeatherPageTwo() throws InterruptedException {
         cityNameTwo.sendKeys(Keys.ENTER);
         Thread.sleep(1000);
         WebElement actualWeatherTwo = driver.findElement(By.xpath("//div[@class='temp']//h2//p"));
-//        System.out.println("Temperatura to:" + " " +  actualWeatherTwo.getAttribute("value"));
+        System.out.println("Temperatura to:" + " " +  actualWeatherTwo.getAttribute("value"));
     }
     @Test(priority = 3)
     public void calendarTest() {

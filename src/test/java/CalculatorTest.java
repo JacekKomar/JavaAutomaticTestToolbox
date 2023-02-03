@@ -87,6 +87,7 @@ public class CalculatorTest extends Main{
         tapButton("DEL");
         System.out.println("Usuwanie liczb działa");
     }
+
     }
 
 
