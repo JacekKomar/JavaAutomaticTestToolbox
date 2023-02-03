@@ -16,7 +16,7 @@ public class CalculatorTest extends Main{
         System.out.println("Kolejne Obliczenie:");
     }
 
-    @Test
+    @Test(priority = 1)
     public void addition() throws InterruptedException {
         driver.findElement(By.xpath("(//h1[normalize-space()='Wybierz: Kalkulator'])[1]")).click();
         Thread.sleep(2000);
@@ -36,7 +36,7 @@ public class CalculatorTest extends Main{
         System.out.println(score);
     }
 
-    @Test
+    @Test(priority = 2)
     public void subtraction() throws InterruptedException {
         driver.findElement(By.xpath("(//button[normalize-space()='0'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='.'])")).click();
@@ -54,7 +54,7 @@ public class CalculatorTest extends Main{
         System.out.println(score);
     }
 
-    @Test
+    @Test(priority = 3)
     public void multiplication() throws InterruptedException {
         driver.findElement(By.xpath("(//button[normalize-space()='2'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='7'])")).click();
@@ -66,7 +66,7 @@ public class CalculatorTest extends Main{
         WebElement score = driver.findElement(By.xpath("(//div[contains(@class,'current-operant')])"));
         System.out.println(score);
     }
-    @Test
+    @Test(priority = 4)
     public void split() throws InterruptedException {
         driver.findElement(By.xpath("(//button[normalize-space()='9'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='5'])")).click();
@@ -79,7 +79,7 @@ public class CalculatorTest extends Main{
         WebElement score = driver.findElement(By.xpath("(//div[contains(@class,'current-operant')])"));
         System.out.println(score);
     }
-    @Test
+    @Test(priority = 5)
     public void delete() throws InterruptedException {
         driver.findElement(By.xpath("(//button[normalize-space()='1'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='7'])")).click();
