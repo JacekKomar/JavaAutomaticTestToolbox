@@ -47,42 +47,27 @@ public class DayScheduleTest extends Main {
     public void deleteTask() {
         WebElement deleteOneTask = driver.findElement(By.xpath("(//*[name()='svg'][@stroke='currentColor'])[5]"));
         deleteOneTask.click();
+
     }
 
     @Test(priority = 6)
     public void changeTask() {
-       WebElement changeOneTask = driver.findElement(By.xpath("(//*[name()='svg'][@stroke='currentColor'])[4]"));
-       changeOneTask.click();
-       WebElement writeChangeTask = driver.findElement(By.xpath("(//input[contains(@placeholder,'Update your item')])[1]"));
+        WebElement changeOneTask = driver.findElement(By.xpath("(//*[name()='svg'][@stroke='currentColor'])[4]"));
+        changeOneTask.click();
+        WebElement writeChangeTask = driver.findElement(By.xpath("(//input[contains(@placeholder,'Update your item')])[1]"));
         writeChangeTask.click();
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
-        writeChangeTask.sendKeys(Keys.BACK_SPACE);
-        writeChangeTask.sendKeys(Keys.BACK_SPACE);
-        writeChangeTask.sendKeys(Keys.BACK_SPACE);
-        writeChangeTask.sendKeys(Keys.BACK_SPACE);
-        writeChangeTask.sendKeys(Keys.BACK_SPACE);
-        writeChangeTask.sendKeys(Keys.BACK_SPACE);
+        for (int i = 0; i < 21; i++){
+            if (i<21) {
+                writeChangeTask.sendKeys(Keys.ARROW_RIGHT);
+            }
+        }
+        for (int i = 0; i < 6; i++){
+            if (i<6) {
+                writeChangeTask.sendKeys(Keys.BACK_SPACE);
+            }
+        }
         writeChangeTask.sendKeys(" Pythonie");
         driver.findElement(By.xpath("(//h3[contains(text(),'Zamień')])")).click();
     }
+
 }
