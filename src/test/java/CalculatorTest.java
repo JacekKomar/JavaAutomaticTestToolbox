@@ -1,5 +1,4 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -17,9 +16,8 @@ public class CalculatorTest extends Main{
     }
 
     @Test(priority = 1)
-    public void addition() throws InterruptedException {
+    public void addition() {
         driver.findElement(By.xpath("(//h1[normalize-space()='Wybierz: Kalkulator'])[1]")).click();
-        Thread.sleep(2000);
         driver.findElement(By.xpath("(//button[normalize-space()='1'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='2'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='3'])")).click();
@@ -31,13 +29,12 @@ public class CalculatorTest extends Main{
         driver.findElement(By.xpath("(//button[normalize-space()='8'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='9'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='='])")).click();
-        Thread.sleep(3000);
         WebElement score = driver.findElement(By.xpath("(//div[contains(@class,'current-operant')])"));
         System.out.println(score);
     }
 
     @Test(priority = 2)
-    public void subtraction() throws InterruptedException {
+    public void subtraction() {
         driver.findElement(By.xpath("(//button[normalize-space()='0'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='.'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='3'])")).click();
@@ -49,25 +46,23 @@ public class CalculatorTest extends Main{
         driver.findElement(By.xpath("(//button[normalize-space()='8'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='9'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='='])")).click();
-        Thread.sleep(3000);
         WebElement score = driver.findElement(By.xpath("(//div[contains(@class,'current-operant')])"));
         System.out.println(score);
     }
 
     @Test(priority = 3)
-    public void multiplication() throws InterruptedException {
+    public void multiplication() {
         driver.findElement(By.xpath("(//button[normalize-space()='2'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='7'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='*'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='5'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='1'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='='])")).click();
-        Thread.sleep(3000);
         WebElement score = driver.findElement(By.xpath("(//div[contains(@class,'current-operant')])"));
         System.out.println(score);
     }
     @Test(priority = 4)
-    public void split() throws InterruptedException {
+    public void split() {
         driver.findElement(By.xpath("(//button[normalize-space()='9'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='5'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='1'])")).click();
@@ -75,19 +70,17 @@ public class CalculatorTest extends Main{
         driver.findElement(By.xpath("(//button[normalize-space()='7'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='9'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='='])")).click();
-        Thread.sleep(3000);
         WebElement score = driver.findElement(By.xpath("(//div[contains(@class,'current-operant')])"));
         System.out.println(score);
     }
     @Test(priority = 5)
-    public void delete() throws InterruptedException {
+    public void delete() {
         driver.findElement(By.xpath("(//button[normalize-space()='1'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='7'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='3'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='DEL'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='DEL'])")).click();
         driver.findElement(By.xpath("(//button[normalize-space()='DEL'])")).click();
-        Thread.sleep(3000);
     }
     }
 
