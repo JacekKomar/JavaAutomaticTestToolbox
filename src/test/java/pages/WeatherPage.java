@@ -1,6 +1,9 @@
 package pages;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class WeatherPage {
 
@@ -13,11 +16,8 @@ public class WeatherPage {
     @FindBy(xpath = "(//input[@placeholder=' Wpisz nazwę miejscowości'])")
             private WebElement cityName;
 
-    @FindBy(xpath = "//div[@class='temp']//h2//p")
-            private WebElement actualWeather;
-
     @FindBy(xpath = "(//button[contains(@class,'rounded border border-dark brightenedDark')])[1]")
-            private WebElement OpenWeatherApiButtonClick;
+            private WebElement openWeatherApiButtonClick;
 
     @FindBy(xpath = "(//div[@class=' ChooseSite col-sm p-4 mr-1 border border-dark rounded brightened'])")
             private WebElement chooseCalendarPage;
@@ -34,31 +34,39 @@ public class WeatherPage {
     @FindBy(xpath = "(//button[normalize-space()='«'])")
             private WebElement previousYear;
 
-    @FindBy(xpath = "(//abbr[@aria-label='14 marca 2024'])")
-            private WebElement seeData;
-
-
-    public void nextWeather() {
-        chooseWeatherPage.click();
+    public WeatherPage(WebDriver driver) {
+        PageFactory.initElements(driver, this);
     }
 
-    public void findWeatherPage() {
+    public void nextWeatherPage() {
+        chooseWeatherPage.click();
+
+    }
+
+    public void findWeatherPageOnePage() {
         weatherApiButtonClick.click();
         cityName.sendKeys("Warszawa");
     }
 
-    public void findWeatherPageTwo() {
-        OpenWeatherApiButtonClick.click();
+    public void findWeatherPageTwoPage() {
+        openWeatherApiButtonClick.click();
         cityName.sendKeys("Poznań");
     }
 
-    public void calendarTest() {
+    public void enterCity() {
+        cityName.sendKeys(Keys.ENTER);
+    }
+
+    public void showCity() {
+        System.out.println("Miasto to:" + " " +  cityName.getAttribute ( "value"));
+    }
+
+    public void calendarTestPage() {
         chooseCalendarPage.click();
         nextYear.click();
         nextMonth.click();
         previousMonth.click();
         previousYear.click();
-        seeData.click();
     }
 
 }
