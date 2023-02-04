@@ -4,7 +4,7 @@ import pages.WeatherPage;
 
 public class WeatherTest extends Main {
 
-@BeforeMethod
+    @BeforeMethod
     public void nextWeather(){
         System.out.println("Pogoda dla kolejnego miasta:");
     }
@@ -19,14 +19,15 @@ public class WeatherTest extends Main {
         Thread.sleep(1000);
     }
 
-@Test(priority = 2)
-public void findWeatherPageTwo() throws InterruptedException {
-    WeatherPage weatherPage = new WeatherPage(driver);
-    weatherPage.findWeatherPageTwoPage();
-    weatherPage.showCity();
-    weatherPage.enterCity();
+    @Test(priority = 2)
+    public void findWeatherPageTwo() throws InterruptedException {
+        WeatherPage weatherPage = new WeatherPage(driver);
+        weatherPage.findWeatherPageTwoPage();
+        weatherPage.showCity();
+        weatherPage.enterCity();
         Thread.sleep(1000);
     }
+
     @Test(priority = 3)
     public void calendarTest() {
         WeatherPage weatherPage = new WeatherPage(driver);

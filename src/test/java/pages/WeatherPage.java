@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class WeatherPage {
-
     @FindBy(xpath = "//div[@class='ChooseSite col-sm mr-1 p-4 border border-dark rounded brightened']")
             private WebElement chooseWeatherPage;
 
@@ -40,7 +39,6 @@ public class WeatherPage {
 
     public void nextWeatherPage() {
         chooseWeatherPage.click();
-
     }
 
     public void findWeatherPageOnePage() {
