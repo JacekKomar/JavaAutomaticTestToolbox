@@ -1,12 +1,13 @@
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.WeatherPage;
+import java.util.logging.Logger;
 
 public class WeatherTest extends Main {
-
+    Logger logger = Logger.getLogger(WeatherTest.class.getName());
     @BeforeMethod
     public void nextWeather(){
-        System.out.println("Pogoda dla kolejnego miasta:");
+        logger.info("Pogoda dla kolejnego miasta:");
     }
 
     @Test(priority = 1)
@@ -32,7 +33,7 @@ public class WeatherTest extends Main {
     public void calendarTest() {
         WeatherPage weatherPage = new WeatherPage(driver);
         weatherPage.calendarTestPage();
-        System.out.println("Wybrano datę");
+        logger.info("Wybrano datę");
     }
 
 }

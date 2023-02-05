@@ -5,7 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.logging.Logger;
+
 public class DayScheduleTestPage {
+    Logger logger = Logger.getLogger(DayScheduleTestPage.class.getName());
 
     @FindBy(xpath = "(//div[@class='ChooseSite col-sm p-4 mr-1 border border-dark rounded brightened'])[2]")
         private WebElement chooseDaySchedulePage;
@@ -49,7 +52,7 @@ public class DayScheduleTestPage {
     }
 
     public void displayTask() {
-        System.out.println("Zadanie to:" + " " + addTaskWrite.getAttribute("value"));
+        logger.info("Zadanie to:" + " " + addTaskWrite.getAttribute("value"));
     }
 
     public void clickAddTask() {
@@ -74,7 +77,7 @@ public class DayScheduleTestPage {
             }
         }
         writeChangeTask.sendKeys(" Pythonie");
-        System.out.println("Zmienione zadanie to:" + " " + writeChangeTask.getAttribute("value"));
+        logger.info("Zmienione zadanie to:" + " " + writeChangeTask.getAttribute("value"));
         confirmChangeTaskButton.click();
     }
 

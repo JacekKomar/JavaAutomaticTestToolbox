@@ -4,34 +4,36 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import java.util.logging.Logger;
 
 public class WeatherPage {
+    Logger logger = Logger.getLogger(WeatherPage.class.getName());
     @FindBy(xpath = "//div[@class='ChooseSite col-sm mr-1 p-4 border border-dark rounded brightened']")
-            private WebElement chooseWeatherPage;
+    private WebElement chooseWeatherPage;
 
     @FindBy(xpath = "(//button[contains(@class,'rounded border border-dark brightenedDark')])[2]")
-            private WebElement weatherApiButtonClick;
+    private WebElement weatherApiButtonClick;
 
     @FindBy(xpath = "(//input[@placeholder=' Wpisz nazwę miejscowości'])")
-            private WebElement cityName;
+    private WebElement cityName;
 
     @FindBy(xpath = "(//button[contains(@class,'rounded border border-dark brightenedDark')])[1]")
-            private WebElement openWeatherApiButtonClick;
+    private WebElement openWeatherApiButtonClick;
 
     @FindBy(xpath = "(//div[@class=' ChooseSite col-sm p-4 mr-1 border border-dark rounded brightened'])")
-            private WebElement chooseCalendarPage;
+    private WebElement chooseCalendarPage;
 
     @FindBy(xpath = "(//button[normalize-space()='»'])")
-            private WebElement nextYear;
+    private WebElement nextYear;
 
     @FindBy(xpath = "(//button[contains(text(),'›')])")
-            private WebElement nextMonth;
+    private WebElement nextMonth;
 
     @FindBy(xpath = "(//button[contains(text(),'‹')])")
-            private WebElement previousMonth;
+    private WebElement previousMonth;
 
     @FindBy(xpath = "(//button[normalize-space()='«'])")
-            private WebElement previousYear;
+    private WebElement previousYear;
 
     public WeatherPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -56,7 +58,7 @@ public class WeatherPage {
     }
 
     public void showCity() {
-        System.out.println("Miasto to:" + " " +  cityName.getAttribute ( "value"));
+            logger.info("Miasto to:" + " " +  cityName.getAttribute ( "value"));
     }
 
     public void calendarTestPage() {

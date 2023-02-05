@@ -2,8 +2,12 @@ import org.openqa.selenium.By;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pages.WeatherPage;
+
+import java.util.logging.Logger;
 
 public class CalculatorTest extends Main{
+    Logger logger = Logger.getLogger(WeatherPage.class.getName());
 
     @AfterMethod
     public void deleteScore(){
@@ -11,7 +15,7 @@ public class CalculatorTest extends Main{
     }
     @BeforeMethod
     public void informationAboutCalculating(){
-        System.out.println("Kolejne Obliczenie:");
+        logger.info("Kolejne Obliczenie:");
     }
 
     public void tapButton(String label){
@@ -32,7 +36,7 @@ public class CalculatorTest extends Main{
             tapButton("8");
             tapButton("9");
             tapButton("=");
-        System.out.println("Dodawanie działa");
+        logger.info("Dodawanie działa");
     }
 
     @Test(priority = 2)
@@ -48,7 +52,7 @@ public class CalculatorTest extends Main{
             tapButton("8");
             tapButton("9");
             tapButton("=");
-        System.out.println("Odejmowanie działa");
+        logger.info("Odejmowanie działa");
     }
 
     @Test(priority = 3)
@@ -59,7 +63,7 @@ public class CalculatorTest extends Main{
             tapButton("5");
             tapButton("1");
             tapButton("=");
-        System.out.println("Mnożenie działa");
+        logger.info("Mnożenie działa");
     }
 
     @Test(priority = 4)
@@ -71,7 +75,7 @@ public class CalculatorTest extends Main{
             tapButton("7");
             tapButton("9");
             tapButton("=");
-        System.out.println("Dzielenie działa");
+        logger.info("Dzielenie działa");
     }
 
     @Test(priority = 5)
@@ -84,7 +88,7 @@ public class CalculatorTest extends Main{
         tapButton("DEL");
         tapButton("DEL");
         tapButton("DEL");
-        System.out.println("Usuwanie liczb działa");
+        logger.info ("Usuwanie liczb działa");
     }
 
     }
