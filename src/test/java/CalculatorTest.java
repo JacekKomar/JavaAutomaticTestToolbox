@@ -3,18 +3,19 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.WeatherPage;
-
 import java.util.logging.Logger;
 
 public class CalculatorTest extends Main{
+
     Logger logger = Logger.getLogger(WeatherPage.class.getName());
 
     @AfterMethod
-    public void deleteScore(){
+        public void deleteScore(){
         driver.findElement(By.xpath("(//button[normalize-space()='AC'])")).click();
     }
+
     @BeforeMethod
-    public void informationAboutCalculating(){
+        public void informationAboutCalculating(){
         logger.info("Kolejne Obliczenie:");
     }
 
@@ -92,6 +93,3 @@ public class CalculatorTest extends Main{
     }
 
     }
-
-
-

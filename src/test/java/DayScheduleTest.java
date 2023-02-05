@@ -5,6 +5,7 @@ import pages.WeatherPage;
 import java.util.logging.Logger;
 
 public class DayScheduleTest extends Main {
+
     Logger logger = Logger.getLogger(WeatherPage.class.getName());
 
     @BeforeMethod

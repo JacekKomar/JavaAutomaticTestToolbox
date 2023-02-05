@@ -7,7 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.logging.Logger;
 
 public class WeatherPage {
+
     Logger logger = Logger.getLogger(WeatherPage.class.getName());
+
     @FindBy(xpath = "//div[@class='ChooseSite col-sm mr-1 p-4 border border-dark rounded brightened']")
     private WebElement chooseWeatherPage;
 

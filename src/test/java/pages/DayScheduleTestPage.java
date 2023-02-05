@@ -4,10 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import java.util.logging.Logger;
 
 public class DayScheduleTestPage {
+
     Logger logger = Logger.getLogger(DayScheduleTestPage.class.getName());
 
     @FindBy(xpath = "(//div[@class='ChooseSite col-sm p-4 mr-1 border border-dark rounded brightened'])[2]")
