@@ -5,13 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.asserts.SoftAssert;
-
-import java.util.logging.Logger;
 
 public class DayScheduleTestPage {
-
-    Logger logger = Logger.getLogger(DayScheduleTestPage.class.getName());
 
     @FindBy(xpath = "(//div[@class='ChooseSite col-sm p-4 mr-1 border border-dark rounded brightened'])[2]")
         private WebElement chooseDaySchedulePage;
@@ -46,25 +41,18 @@ public class DayScheduleTestPage {
         addTaskWrite.click();
         addTaskWrite.sendKeys("Napisanie Cv.");
         Assert.assertEquals(addTaskWrite.getAttribute("value"), "Napisanie Cv.");
-        logger.info(" Poprawnie dodano pierwsze zadanie.");
     }
 
     public void addTaskTwo() {
         addTaskWrite.click();
         addTaskWrite.sendKeys("Nauka robienia testów automatycznych w Javie.");
         Assert.assertEquals(addTaskWrite.getAttribute("value"), "Nauka robienia testów automatycznych w Javie.");
-        logger.info(" Poprawnie dodano drugie zadanie.");
     }
 
     public void addTaskThree() {
         addTaskWrite.click();
         addTaskWrite.sendKeys("Czytanie książki.");
         Assert.assertEquals(addTaskWrite.getAttribute("value"), "Czytanie książki.");
-        logger.info(" Poprawnie dodano trzecie zadanie.");
-    }
-
-    public void displayTask() {
-        logger.info("Zadanie to:" + " " + addTaskWrite.getAttribute("value"));
     }
 
     public void clickAddTask() {
@@ -90,7 +78,6 @@ public class DayScheduleTestPage {
         }
         writeChangeTask.sendKeys(" Pythonie");
         Assert.assertEquals(writeChangeTask.getAttribute("value"), "Nauka robienia testów automatycznych w Pythonie.");
-        logger.info("Zmienione zadanie to:" + " " + writeChangeTask.getAttribute("value"));
         confirmChangeTaskButton.click();
     }
 
