@@ -3,11 +3,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 public class CalculatorTest extends Main{
-
-    SoftAssert softAssert = new SoftAssert();
 
     @AfterMethod
         public void deleteScore(){

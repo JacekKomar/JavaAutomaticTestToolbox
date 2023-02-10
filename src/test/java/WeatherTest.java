@@ -1,7 +1,5 @@
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.WeatherPage;
-import java.util.logging.Logger;
 
 public class WeatherTest extends Main {
 
