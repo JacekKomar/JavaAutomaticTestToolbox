@@ -1,3 +1,7 @@
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.DayScheduleTestPage;
 
@@ -37,4 +41,20 @@ public class DayScheduleTest extends Main {
         dayScheduleTestPage.changeTaskPage();
     }
 
+    static ExtentTest test;
+    static ExtentReports report;
+
+    @BeforeTest
+    public static void startTest()
+    {
+        report = new ExtentReports(System.getProperty("user.dir")+"DayScheduleTestExtentReportResults.html");
+        test = report.startTest("DayScheduleTest");
+    }
+
+    @AfterTest
+    public static void endTest()
+    {
+        report.endTest(test);
+        report.flush();
+    }
 }

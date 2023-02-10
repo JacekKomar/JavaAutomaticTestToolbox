@@ -1,3 +1,7 @@
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.WeatherPage;
 
@@ -27,6 +31,23 @@ public class WeatherTest extends Main {
     public void testInCalendarChooseDate() {
         WeatherPage weatherPage = new WeatherPage(driver);
         weatherPage.calendarTestPage();
+    }
+
+    static ExtentTest test;
+    static ExtentReports report;
+
+    @BeforeTest
+    public static void startTest()
+    {
+        report = new ExtentReports(System.getProperty("user.dir")+"WeatherTestExtentReportResults.html");
+        test = report.startTest("WeatherTest");
+    }
+
+    @AfterTest
+    public static void endTest()
+    {
+        report.endTest(test);
+        report.flush();
     }
 
 }

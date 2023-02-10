@@ -1,7 +1,11 @@
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class CalculatorTest extends Main{
@@ -87,6 +91,23 @@ public class CalculatorTest extends Main{
         tapButton("DEL");
         WebElement score = driver.findElement(By.xpath("(//div[contains(@class,'current-operant')])"));
         Assert.assertEquals(score.getText(), "");
+    }
+
+    static ExtentTest test;
+    static ExtentReports report;
+
+    @BeforeTest
+    public static void startTest()
+    {
+        report = new ExtentReports(System.getProperty("user.dir")+"CalculatorTestExtentReportResults.html");
+        test = report.startTest("CalculatorTest");
+    }
+
+    @AfterTest
+    public static void endTest()
+    {
+        report.endTest(test);
+        report.flush();
     }
 
     }
