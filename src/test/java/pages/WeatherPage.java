@@ -4,12 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.asserts.SoftAssert;
+
 import java.util.logging.Logger;
 
 public class WeatherPage {
 
     Logger logger = Logger.getLogger(WeatherPage.class.getName());
-
+    SoftAssert softAssert = new SoftAssert();
     @FindBy(xpath = "//div[@class='ChooseSite col-sm mr-1 p-4 border border-dark rounded brightened']")
     private WebElement chooseWeatherPage;
 
@@ -60,6 +62,7 @@ public class WeatherPage {
     }
 
     public void showCity() {
+        softAssert.assertTrue(cityName.isDisplayed(), "Wybór miasta działa.");
             logger.info("Miasto to:" + " " +  cityName.getAttribute ( "value"));
     }
 
@@ -69,6 +72,8 @@ public class WeatherPage {
         nextMonth.click();
         previousMonth.click();
         previousYear.click();
+        softAssert.assertTrue(chooseCalendarPage.isDisplayed(), "Strona kalendarz działa.");
+        logger.info("Wybrano datę");
     }
 
 }

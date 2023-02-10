@@ -1,13 +1,18 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import pages.WeatherPage;
 import java.util.logging.Logger;
 
 public class CalculatorTest extends Main{
 
     Logger logger = Logger.getLogger(WeatherPage.class.getName());
+
+    SoftAssert softAssert = new SoftAssert();
 
     @AfterMethod
         public void deleteScore(){
@@ -37,6 +42,8 @@ public class CalculatorTest extends Main{
             tapButton("8");
             tapButton("9");
             tapButton("=");
+        WebElement score = driver.findElement(By.xpath("(//div[contains(@class,'current-operant')])"));
+        Assert.assertEquals(score.getText(), "58023");
         logger.info("Dodawanie działa");
     }
 
@@ -53,6 +60,8 @@ public class CalculatorTest extends Main{
             tapButton("8");
             tapButton("9");
             tapButton("=");
+        WebElement score = driver.findElement(By.xpath("(//div[contains(@class,'current-operant')])"));
+        Assert.assertEquals(score.getText(), "-56788.66");
         logger.info("Odejmowanie działa");
     }
 
@@ -64,6 +73,8 @@ public class CalculatorTest extends Main{
             tapButton("5");
             tapButton("1");
             tapButton("=");
+        WebElement score = driver.findElement(By.xpath("(//div[contains(@class,'current-operant')])"));
+        Assert.assertEquals(score.getText(), "1377");
         logger.info("Mnożenie działa");
     }
 
@@ -76,6 +87,8 @@ public class CalculatorTest extends Main{
             tapButton("7");
             tapButton("9");
             tapButton("=");
+        WebElement score = driver.findElement(By.xpath("(//div[contains(@class,'current-operant')])"));
+        Assert.assertEquals(score.getText(), "12.037974683544304");
         logger.info("Dzielenie działa");
     }
 
@@ -89,6 +102,8 @@ public class CalculatorTest extends Main{
         tapButton("DEL");
         tapButton("DEL");
         tapButton("DEL");
+        WebElement score = driver.findElement(By.xpath("(//div[contains(@class,'current-operant')])"));
+        Assert.assertEquals(score.getText(), "");
         logger.info ("Usuwanie liczb działa");
     }
 

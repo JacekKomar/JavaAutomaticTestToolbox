@@ -44,6 +44,7 @@ public class DayScheduleTestPage {
     public void addTaskTwo() {
         addTaskWrite.click();
         addTaskWrite.sendKeys("Nauka robienia testów automatycznych w Javie.");
+
     }
 
     public void addTaskThree() {
