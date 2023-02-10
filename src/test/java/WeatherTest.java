@@ -4,7 +4,7 @@ import pages.WeatherPage;
 public class WeatherTest extends Main {
 
     @Test(priority = 1)
-    public void findWeatherPage() throws InterruptedException {
+    public void testFindWeatherPage() throws InterruptedException {
         WeatherPage weatherPage = new WeatherPage(driver);
         weatherPage.nextWeatherPage();
         weatherPage.findWeatherPageOnePage();
@@ -15,7 +15,7 @@ public class WeatherTest extends Main {
     }
 
     @Test(priority = 2)
-    public void findWeatherPageTwo() throws InterruptedException {
+    public void testFindWeatherPageTwo() throws InterruptedException {
         WeatherPage weatherPage = new WeatherPage(driver);
         weatherPage.findWeatherPageTwoPage();
         weatherPage.showCity();
@@ -24,7 +24,7 @@ public class WeatherTest extends Main {
     }
 
     @Test(priority = 3)
-    public void calendarTest() {
+    public void testInCalendarChooseDate() {
         WeatherPage weatherPage = new WeatherPage(driver);
         weatherPage.calendarTestPage();
     }
